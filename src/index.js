@@ -18,14 +18,32 @@ const messages = {
     'ru': messages_ru,
 };
 
-let language = navigator.language.split(/[-_]/)[0];
 addLocaleData([...locale_de, ...locale_en, ...locale_ru]);
 
+class Layout extends React.Component {
+  state = {
+    language: navigator.language.split(/[-_]/)[0]
+  }
+
+  onChangeLocale = (lang) => {
+    this.setState({
+      language: lang
+    })
+  }
+
+  render() {
+    const { language } = this.state;
+
+    return (
+      <IntlProvider locale={language} messages={messages[language]}>
+        <App onChangeLocale={this.onChangeLocale} />
+      </IntlProvider>
+    )
+  }
+}
 
 ReactDOM.render(
-  <IntlProvider locale={language} messages={messages[language]} defaultLocale={language}>
-    <App />
-  </IntlProvider>,
+  <Layout />,
   document.getElementById('root')
 );
 

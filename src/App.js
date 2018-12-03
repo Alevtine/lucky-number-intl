@@ -4,15 +4,12 @@ import './App.css';
 
 class App extends Component {
   state = {
-    lang: this.props.userLang,
-    messages: this.props.messages,
     luckyNumber: '',
   }
 
   componentDidMount() {
     const luckyOnInit = this.calculateNumber();
     this.setState({
-      lang: 'en',
       luckyNumber: luckyOnInit,
     })
   }
@@ -50,9 +47,9 @@ class App extends Component {
               id="app.chooseLang"
               defaultMessage="Preferred language: "
               description="Choose app language" />
-            <button type="button" className="lang en">EN</button>
-            <button type="button" className="lang ru">RU</button>
-            <button type="button" className="lang al">DE</button>
+            <button type="button" className="lang en" onClick={() => this.props.onChangeLocale('en')}>EN</button>
+            <button type="button" className="lang ru" onClick={() => this.props.onChangeLocale('ru')}>RU</button>
+            <button type="button" className="lang al" onClick={() => this.props.onChangeLocale('de')}>DE</button>
           </p>
           <p>
             <button type="button" className="lucky-button" onClick={this.onButtonGetLucky}>GET LUCKY</button>
