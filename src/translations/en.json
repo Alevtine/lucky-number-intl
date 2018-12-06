@@ -1,5 +1,6 @@
 {
     "app.title": "Your lucky number for today",
     "app.randomQuote": "My style is unique and random",
-    "app.chooseLang": "Preferred language: "
+    "app.chooseLang": "Preferred language: ",
+    "app.luckyPhraze": "You gotta {luckyNumber} {fruits}"
 }

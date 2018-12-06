@@ -1,5 +1,6 @@
 {
     "app.title": "Ваше счастливое число на сегодня",
     "app.randomQuote": "Мой стиль уникален и разнообразен",
-    "app.chooseLang": "Предпочитаемый язык: "
+    "app.chooseLang": "Предпочитаемый язык: ",
+    "app.luckyPhraze": "Вам выпало {luckyNumber} {fruits}"
 }
